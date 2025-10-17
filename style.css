@@ -1,10 +1,37 @@
+/* Modern Color Palette & Font Setup */
+:root {
+    --bg-color: #f4f4f9; /* Light mode background */
+    --text-color: #333;
+    --card-bg: #ffffff;
+    --primary-color: #007BFF;
+    --border-color: #e0e0e0;
+    --header-bg: rgba(255, 255, 255, 0.85); /* Slightly transparent header */
+}
+
+/* This is the dark mode theme */
+body.dark-mode {
+    --bg-color: #121212; /* Dark mode background */
+    --text-color: #e0e0e0;
+    --card-bg: #1e1e1e;
+    --primary-color: #00A6FF; /* A brighter blue for dark backgrounds */
+    --border-color: #333;
+    --header-bg: rgba(30, 30, 30, 0.85);
+}
+
 /* General Body Styles */
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    /* Font updated to Lato */
+    font-family: 'Lato', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     margin: 0;
-    background-color: #f4f4f9;
-    color: #333;
+    background-color: var(--bg-color); /* Use variable */
+    color: var(--text-color); /* Use variable */
     line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Headings font updated to Montserrat */
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif; /* Bold, modern headings */
 }
 
 .container {
@@ -16,13 +43,15 @@ body {
 
 /* Header & Navigation */
 header {
-    background: #fff;
-    color: #333;
+    background: var(--header-bg); /* Use variable */
+    backdrop-filter: blur(10px); /* Frosted glass effect for the header */
+    -webkit-backdrop-filter: blur(10px);
     padding: 1rem 0;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid var(--border-color);
     position: sticky;
     top: 0;
     z-index: 1000;
+    transition: background-color 0.3s, border-color 0.3s;
 }
 
 header .container {
@@ -34,13 +63,15 @@ header .container {
 header .logo a {
     font-weight: bold;
     font-size: 1.5rem;
-    color: #333;
+    color: var(--text-color);
     text-decoration: none;
+    font-family: 'Montserrat', sans-serif; /* Ensure logo also uses heading font */
 }
 
 header nav ul {
     list-style: none;
     display: flex;
+    align-items: center;
     margin: 0;
     padding: 0;
 }
@@ -50,14 +81,14 @@ header nav ul li {
 }
 
 header nav ul li a {
-    color: #555;
+    color: var(--text-color);
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
 }
 
 header nav ul li a:hover {
-    color: #007BFF;
+    color: var(--primary-color);
 }
 
 .hamburger {
@@ -68,17 +99,16 @@ header nav ul li a:hover {
 .hamburger div {
     width: 25px;
     height: 3px;
-    background-color: #333;
+    background-color: var(--text-color);
     margin: 5px;
     transition: all 0.3s ease;
 }
 
-
 /* Hero Section */
 #hero {
-    background: #fff;
+    background: var(--card-bg);
     padding: 4rem 0;
-    text-align: center;
+    text-align: left;
 }
 
 .hero-content h1 {
@@ -88,13 +118,15 @@ header nav ul li a:hover {
 
 .hero-content .subtitle {
     font-size: 1.2rem;
-    color: #555;
+    color: var(--text-color);
+    opacity: 0.8;
     margin-bottom: 20px;
+    min-height: 28px; /* Give space for typed text to appear */
 }
 
 .btn {
     display: inline-block;
-    background: #007BFF;
+    background: var(--primary-color);
     color: #fff;
     padding: 10px 20px;
     text-decoration: none;
@@ -103,13 +135,17 @@ header nav ul li a:hover {
 }
 
 .btn:hover {
-    background: #0056b3;
+    background: #0056b3; /* Keeping a distinct hover color for light mode */
+}
+
+body.dark-mode .btn:hover {
+    opacity: 0.8;
 }
 
 /* Sections */
 section {
     padding: 4rem 0;
-    border-bottom: 1px solid #e0e0e0;
+    border-bottom: 1px solid var(--border-color);
 }
 
 section:last-of-type {
@@ -120,6 +156,38 @@ section h2 {
     text-align: center;
     margin-bottom: 2rem;
     font-size: 2.5rem;
+}
+
+/* Skills Section */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 20px;
+    text-align: center;
+}
+
+.skill-card {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+.skill-card img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.skill-card h3 {
+    margin: 0;
+    font-size: 1rem;
 }
 
 /* Experience Timeline */
@@ -133,7 +201,7 @@ section h2 {
     content: '';
     position: absolute;
     width: 2px;
-    background-color: #007BFF;
+    background-color: var(--primary-color);
     top: 0;
     bottom: 0;
     left: 10px;
@@ -150,29 +218,26 @@ section h2 {
     position: absolute;
     width: 10px;
     height: 10px;
-    background-color: white;
-    border: 3px solid #007BFF;
+    background-color: var(--bg-color);
+    border: 3px solid var(--primary-color);
     border-radius: 50%;
     left: 4px;
     top: 24px;
     z-index: 1;
 }
 
-.timeline-item h3 {
-    margin-top: 0;
-}
-
 .company {
     font-weight: bold;
-    color: #555;
+    color: var(--text-color);
+    opacity: 0.9;
 }
 
 .date {
     font-style: italic;
-    color: #777;
+    color: var(--text-color);
+    opacity: 0.7;
     margin-bottom: 10px;
 }
-
 
 /* Project Grid */
 .project-grid {
@@ -182,19 +247,15 @@ section h2 {
 }
 
 .project-card {
-    background: #fff;
+    background: var(--card-bg);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    border-left: 4px solid #007BFF;
-}
-
-.project-card h3 {
-    margin-top: 0;
+    border-left: 4px solid var(--primary-color);
 }
 
 .project-card a {
-    color: #007BFF;
+    color: var(--primary-color);
     text-decoration: none;
     font-weight: bold;
 }
@@ -202,7 +263,7 @@ section h2 {
 /* Contact & Footer */
 #contact {
     text-align: center;
-    background-color: #fff;
+    background-color: var(--card-bg);
 }
 
 footer {
@@ -212,6 +273,11 @@ footer {
     color: #fff;
 }
 
+body.dark-mode footer {
+    background: #1e1e1e;
+    color: var(--text-color);
+}
+
 /* Responsive Design */
 @media screen and (max-width: 768px) {
     .nav-links {
@@ -219,7 +285,7 @@ footer {
         right: 0px;
         height: 92vh;
         top: 8vh;
-        background-color: white;
+        background-color: var(--card-bg);
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -264,18 +330,18 @@ footer {
     .toggle .line3 {
         transform: rotate(45deg) translate(-5px, -6px);
     }
-
 }
+
 /* Styles for Hero Section with Image */
 .hero-container {
     display: flex;
     align-items: center;
-    gap: 2rem; /* Adds space between text and image */
+    gap: 2rem;
 }
 
 .hero-content {
-    flex: 2; /* Gives more space to the text */
-    text-align: left; /* Overrides the center alignment */
+    flex: 2;
+    text-align: left;
 }
 
 .hero-image {
@@ -285,21 +351,16 @@ footer {
 
 .hero-image img {
     width: 100%;
-    max-width: 250px; /* Adjust size if needed */
-    border-radius: 50%; /* This makes the image a circle */
-    border: 5px solid #fff;
+    max-width: 250px;
+    border-radius: 50%;
+    border: 5px solid var(--card-bg);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
 }
 
-/* Adjust the hero section's original text alignment */
-#hero {
-    text-align: left;
-}
-
-/* Make it stack on mobile devices */
+/* Mobile Responsive Hero Section */
 @media screen and (max-width: 768px) {
     .hero-container {
-        flex-direction: column-reverse; /* Stacks text below image */
+        flex-direction: column-reverse;
         text-align: center;
     }
 
