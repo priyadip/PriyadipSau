@@ -1,415 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Priyadip Sau | ML & GenAI Portfolio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
-    body {
-      font-family: 'Roboto', Arial, sans-serif;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: #2d3748;
-      line-height: 1.6;
-      min-height: 100vh;
-      padding: 20px;
-    }
-    
-    .container {
-      max-width: 1000px;
-      margin: 0 auto;
-      background: #ffffff;
-      border-radius: 20px;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-      overflow: hidden;
-    }
-    
-    header {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      padding: 60px 40px;
-      text-align: center;
-    }
-    
-    .profile-image {
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      border: 5px solid white;
-      margin: 0 auto 20px;
-      display: block;
-      object-fit: cover;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    }
-    
-    h1 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 2.5em;
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
-    
-    .tagline {
-      font-size: 1.2em;
-      opacity: 0.95;
-      font-weight: 300;
-    }
-    
-    .content {
-      padding: 40px;
-    }
-    
-    section {
-      margin-bottom: 40px;
-    }
-    
-    h2 {
-      font-family: 'Montserrat', sans-serif;
-      color: #667eea;
-      font-size: 1.8em;
-      margin-bottom: 20px;
-      padding-bottom: 10px;
-      border-bottom: 3px solid #667eea;
-    }
-    
-    .bio-text {
-      font-size: 1.1em;
-      color: #4a5568;
-      margin-bottom: 15px;
-    }
-    
-    .education-item, .experience-item, .project-item {
-      margin-bottom: 25px;
-      padding: 20px;
-      background: #f7fafc;
-      border-radius: 10px;
-      border-left: 4px solid #667eea;
-    }
-    
-    .education-item h3, .experience-item h3, .project-item h3 {
-      font-family: 'Montserrat', sans-serif;
-      color: #2d3748;
-      font-size: 1.3em;
-      margin-bottom: 8px;
-    }
-    
-    .subtitle {
-      color: #718096;
-      font-size: 1em;
-      margin-bottom: 5px;
-    }
-    
-    .date {
-      color: #a0aec0;
-      font-size: 0.9em;
-      font-style: italic;
-      margin-bottom: 10px;
-    }
-    
-    ul {
-      margin-left: 20px;
-      color: #4a5568;
-    }
-    
-    li {
-      margin-bottom: 8px;
-    }
-    
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-    
-    .skill-category {
-      background: #f7fafc;
-      padding: 20px;
-      border-radius: 10px;
-      border-top: 3px solid #764ba2;
-    }
-    
-    .skill-category h3 {
-      font-family: 'Montserrat', sans-serif;
-      color: #2d3748;
-      font-size: 1.2em;
-      margin-bottom: 12px;
-    }
-    
-    .skill-category ul {
-      list-style: none;
-      margin-left: 0;
-    }
-    
-    .skill-category li {
-      padding: 5px 0;
-      color: #4a5568;
-    }
-    
-    .skill-category li:before {
-      content: "✓ ";
-      color: #667eea;
-      font-weight: bold;
-      margin-right: 8px;
-    }
-    
-    .achievements-list {
-      list-style: none;
-      margin-left: 0;
-    }
-    
-    .achievements-list li {
-      padding: 15px;
-      margin-bottom: 15px;
-      background: #f7fafc;
-      border-radius: 8px;
-      border-left: 4px solid #764ba2;
-      color: #4a5568;
-    }
-    
-    .achievements-list li:before {
-      content: "🏆 ";
-      margin-right: 10px;
-    }
-    
-    .contact-info {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 25px;
-      justify-content: center;
-      padding: 30px;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      border-radius: 15px;
-      color: white;
-    }
-    
-    .contact-item {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    
-    .contact-item a {
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-      transition: opacity 0.3s;
-    }
-    
-    .contact-item a:hover {
-      opacity: 0.8;
-    }
-    
-    @media (max-width: 768px) {
-      header {
-        padding: 40px 20px;
-      }
-      
-      h1 {
-        font-size: 2em;
-      }
-      
-      .content {
-        padding: 20px;
-      }
-      
-      .profile-image {
-        width: 150px;
-        height: 150px;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Priyadip Sau | M.Tech AI Student</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
+
     <header>
-      <img src="1000278950.jpg" alt="Priyadip Sau" class="profile-image">
-      <h1>Priyadip Sau</h1>
-      <p class="tagline">Machine Learning Engineer | GenAI Specialist | Data Scientist</p>
+        <div class="container">
+            <div class="logo">
+                <a href="#">Priyadip Sau</a>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+            </nav>
+        </div>
     </header>
-    
-    <div class="content">
-      <section id="bio">
-        <h2>Bio</h2>
-        <p class="bio-text">
-          Passionate Machine Learning Engineer and GenAI specialist with expertise in developing innovative AI solutions. 
-          Experienced in building scalable machine learning models, implementing generative AI applications, and leveraging 
-          cutting-edge technologies to solve complex business problems. Strong background in data science, deep learning, 
-          and MLOps with a proven track record of delivering impactful projects.
-        </p>
-      </section>
-      
-      <section id="education">
-        <h2>Education</h2>
-        <div class="education-item">
-          <h3>Bachelor of Technology in Computer Science</h3>
-          <p class="subtitle">University Name</p>
-          <p class="date">Year - Year</p>
-          <p>Specialized in Machine Learning, Artificial Intelligence, and Data Science</p>
+
+    <main>
+        <section id="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Priyadip Sau</h1>
+                    <p class="subtitle">M.Tech AI Student | Machine Learning & Deep Learning</p>
+                    <p>
+                        I am a highly motivated M.Tech student at IIT Jodhpur specializing in Artificial Intelligence. With a strong background in Mathematics, I am passionate about leveraging my analytical skills to develop robust machine learning models and explore the frontiers of generative AI.
+                    </p>
+                    <a href="IITJ_ResumeFormat___Priyadip-2 (1).pdf" class="btn" target="_blank">View My CV</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="container">
+                <h2>About Me</h2>
+                <p>
+                    My approach to AI is building on a solid theoretical foundation from my mathematics degrees and practical application in my M.Tech program. My current coursework in Machine Learning, Foundation Models & Generative AI, and Mathematical Foundations of Computer Science is shaping my goal to contribute to innovative AI solutions.
+                </p>
+            </div>
+        </section>
+
+        <section id="experience">
+            <div class="container">
+                <h2>Experience</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h3>Math Teacher</h3>
+                        <p class="company">Vivekananda Public School, Odisha</p>
+                        <p class="date">March 2025 – July 2025</p>
+                        <p>Taught mathematics to students of Class-VIII to Class-XII at a CBSE affiliated school.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <div class="container">
+                <h2>Projects</h2>
+                <div class="project-grid">
+                    <div class="project-card">
+                        <h3>Rice Dataset Classification using ResNet-18</h3>
+                        <p>Trained a ResNet-18 classifier from scratch, achieving 99.87% accuracy on a 5-class rice species dataset. Utilized Python and PyTorch for implementation.</p>
+                        <a href="https://github.com/priyadip" target="_blank">View on GitHub</a>
+                    </div>
+                    <div class="project-card">
+                        <h3>Persona Modeling with Fine-Tuned LLMs</h3>
+                        <p>For my Foundation Models & Gen AI course, I fine-tuned the Hermes-2-Pro-Llama-3-8B model to specialize in persona modeling, enhancing its ability to generate contextually consistent character responses.</p>
+                        <a href="https://github.com/priyadip" target="_blank">View on GitHub</a>
+                    </div>
+                     <div class="project-card">
+                        <h3>Advanced Customer Segmentation</h3>
+                        <p>Developed a novel clustering system for an ML course project by combining autoencoders for non-linear feature extraction with Gaussian Mixture Models (GMM) for probabilistic clustering.</p>
+                         <a href="https://github.com/priyadip" target="_blank">View on GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <h2>Get In Touch</h2>
+                <p>I'm always open to discussing new research, projects, or collaboration opportunities.</p>
+                <a href="mailto:saupriyadip571@gmail.com" class="btn">Say Hello</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Priyadip Sau. All Rights Reserved.</p>
         </div>
-      </section>
-      
-      <section id="projects">
-        <h2>Projects</h2>
-        <div class="project-item">
-          <h3>GenAI Application Development</h3>
-          <p class="date">Recent Project</p>
-          <ul>
-            <li>Developed generative AI applications using state-of-the-art language models</li>
-            <li>Implemented RAG (Retrieval Augmented Generation) systems for enhanced accuracy</li>
-            <li>Deployed scalable solutions using cloud infrastructure</li>
-          </ul>
-        </div>
-        <div class="project-item">
-          <h3>Machine Learning Pipeline</h3>
-          <p class="date">Recent Project</p>
-          <ul>
-            <li>Built end-to-end ML pipelines for production deployment</li>
-            <li>Implemented automated model training and evaluation workflows</li>
-            <li>Integrated MLOps best practices for continuous improvement</li>
-          </ul>
-        </div>
-        <div class="project-item">
-          <h3>Data Analytics Platform</h3>
-          <p class="date">Recent Project</p>
-          <ul>
-            <li>Designed and developed comprehensive data analytics solutions</li>
-            <li>Created interactive dashboards for business intelligence</li>
-            <li>Implemented real-time data processing pipelines</li>
-          </ul>
-        </div>
-      </section>
-      
-      <section id="experience">
-        <h2>Experience</h2>
-        <div class="experience-item">
-          <h3>Machine Learning Engineer</h3>
-          <p class="subtitle">Company Name</p>
-          <p class="date">Duration</p>
-          <ul>
-            <li>Developed and deployed machine learning models for production environments</li>
-            <li>Collaborated with cross-functional teams to deliver AI-powered solutions</li>
-            <li>Optimized model performance and implemented monitoring systems</li>
-            <li>Mentored junior team members on ML best practices</li>
-          </ul>
-        </div>
-        <div class="experience-item">
-          <h3>Data Scientist</h3>
-          <p class="subtitle">Company Name</p>
-          <p class="date">Duration</p>
-          <ul>
-            <li>Conducted advanced data analysis and statistical modeling</li>
-            <li>Built predictive models to drive business decisions</li>
-            <li>Created data visualization and reporting solutions</li>
-            <li>Worked with stakeholders to identify and solve business problems</li>
-          </ul>
-        </div>
-      </section>
-      
-      <section id="skills">
-        <h2>Technical Skills</h2>
-        <div class="skills-grid">
-          <div class="skill-category">
-            <h3>Programming Languages</h3>
-            <ul>
-              <li>Python</li>
-              <li>SQL</li>
-              <li>R</li>
-              <li>JavaScript</li>
-            </ul>
-          </div>
-          <div class="skill-category">
-            <h3>ML/AI Frameworks</h3>
-            <ul>
-              <li>TensorFlow</li>
-              <li>PyTorch</li>
-              <li>Scikit-learn</li>
-              <li>Keras</li>
-              <li>Hugging Face</li>
-            </ul>
-          </div>
-          <div class="skill-category">
-            <h3>GenAI & LLMs</h3>
-            <ul>
-              <li>OpenAI GPT</li>
-              <li>LangChain</li>
-              <li>RAG Systems</li>
-              <li>Prompt Engineering</li>
-              <li>Fine-tuning</li>
-            </ul>
-          </div>
-          <div class="skill-category">
-            <h3>Data Tools</h3>
-            <ul>
-              <li>Pandas</li>
-              <li>NumPy</li>
-              <li>Matplotlib</li>
-              <li>Seaborn</li>
-              <li>Plotly</li>
-            </ul>
-          </div>
-          <div class="skill-category">
-            <h3>Cloud & DevOps</h3>
-            <ul>
-              <li>AWS</li>
-              <li>Azure</li>
-              <li>Docker</li>
-              <li>Kubernetes</li>
-              <li>Git</li>
-            </ul>
-          </div>
-          <div class="skill-category">
-            <h3>Databases</h3>
-            <ul>
-              <li>PostgreSQL</li>
-              <li>MongoDB</li>
-              <li>Redis</li>
-              <li>Vector DBs</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-      
-      <section id="achievements">
-        <h2>Achievements</h2>
-        <ul class="achievements-list">
-          <li>Successfully deployed multiple machine learning models in production environments</li>
-          <li>Contributed to open-source AI/ML projects</li>
-          <li>Published research papers and technical articles on ML and GenAI</li>
-          <li>Recognized for innovative solutions in AI/ML domain</li>
-          <li>Completed advanced certifications in Machine Learning and Cloud Computing</li>
-        </ul>
-      </section>
-      
-      <section id="contact">
-        <h2>Contact</h2>
-        <div class="contact-info">
-          <div class="contact-item">
-            <span>📧</span>
-            <a href="mailto:priyadip@example.com">priyadip@example.com</a>
-          </div>
-          <div class="contact-item">
-            <span>💼</span>
-            <a href="https://linkedin.com/in/priyadipsau" target="_blank">LinkedIn</a>
-          </div>
-          <div class="contact-item">
-            <span>🐙</span>
-            <a href="https://github.com/priyadip" target="_blank">GitHub</a>
-          </div>
-          <div class="contact-item">
-            <span>📱</span>
-            <span>+91-XXXXXXXXXX</span>
-          </div>
-        </div>
-      </section>
-    </div>
-  </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
