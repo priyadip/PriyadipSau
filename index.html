@@ -35,63 +35,35 @@
     header {
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       color: white;
+      padding: 60px 40px;
       text-align: center;
-      padding: 60px 20px 40px;
     }
     
-    .profile-photo {
+    .profile-image {
       width: 180px;
       height: 180px;
       border-radius: 50%;
-      border: 6px solid rgba(255, 255, 255, 0.9);
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+      border: 5px solid white;
+      margin: 0 auto 20px;
+      display: block;
       object-fit: cover;
-      margin-bottom: 20px;
-      transition: transform 0.3s ease;
-    }
-    
-    .profile-photo:hover {
-      transform: scale(1.05);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     }
     
     h1 {
       font-family: 'Montserrat', sans-serif;
-      font-size: 2.8rem;
+      font-size: 2.5em;
       font-weight: 700;
       margin-bottom: 10px;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     }
     
     .tagline {
-      font-size: 1.2rem;
-      font-weight: 300;
+      font-size: 1.2em;
       opacity: 0.95;
-      margin-bottom: 25px;
+      font-weight: 300;
     }
     
-    .social-links {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-    
-    .social-links a {
-      color: white;
-      text-decoration: none;
-      padding: 10px 20px;
-      background: rgba(255, 255, 255, 0.2);
-      border-radius: 25px;
-      transition: all 0.3s ease;
-      font-weight: 500;
-    }
-    
-    .social-links a:hover {
-      background: rgba(255, 255, 255, 0.3);
-      transform: translateY(-2px);
-    }
-    
-    main {
+    .content {
       padding: 40px;
     }
     
@@ -102,69 +74,78 @@
     h2 {
       font-family: 'Montserrat', sans-serif;
       color: #667eea;
-      font-size: 1.8rem;
+      font-size: 1.8em;
       margin-bottom: 20px;
       padding-bottom: 10px;
       border-bottom: 3px solid #667eea;
-      font-weight: 600;
     }
     
-    .card {
-      background: #f7fafc;
-      padding: 20px;
-      border-radius: 12px;
+    .bio-text {
+      font-size: 1.1em;
+      color: #4a5568;
       margin-bottom: 15px;
+    }
+    
+    .education-item, .experience-item, .project-item {
+      margin-bottom: 25px;
+      padding: 20px;
+      background: #f7fafc;
+      border-radius: 10px;
       border-left: 4px solid #667eea;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-      transition: all 0.3s ease;
     }
     
-    .card:hover {
-      box-shadow: 0 4px 16px rgba(102, 126, 234, 0.2);
-      transform: translateX(5px);
-    }
-    
-    .card h3 {
+    .education-item h3, .experience-item h3, .project-item h3 {
+      font-family: 'Montserrat', sans-serif;
       color: #2d3748;
-      font-size: 1.3rem;
-      margin-bottom: 8px;
-      font-weight: 600;
-    }
-    
-    .card .subtitle {
-      color: #667eea;
-      font-weight: 500;
+      font-size: 1.3em;
       margin-bottom: 8px;
     }
     
-    .card .date {
+    .subtitle {
       color: #718096;
-      font-size: 0.9rem;
+      font-size: 1em;
+      margin-bottom: 5px;
+    }
+    
+    .date {
+      color: #a0aec0;
+      font-size: 0.9em;
       font-style: italic;
       margin-bottom: 10px;
+    }
+    
+    ul {
+      margin-left: 20px;
+      color: #4a5568;
+    }
+    
+    li {
+      margin-bottom: 8px;
     }
     
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 15px;
+      gap: 20px;
     }
     
     .skill-category {
       background: #f7fafc;
       padding: 20px;
-      border-radius: 12px;
-      border-top: 4px solid #667eea;
+      border-radius: 10px;
+      border-top: 3px solid #764ba2;
     }
     
     .skill-category h3 {
-      color: #667eea;
+      font-family: 'Montserrat', sans-serif;
+      color: #2d3748;
+      font-size: 1.2em;
       margin-bottom: 12px;
-      font-size: 1.1rem;
     }
     
     .skill-category ul {
       list-style: none;
+      margin-left: 0;
     }
     
     .skill-category li {
@@ -173,67 +154,75 @@
     }
     
     .skill-category li:before {
-      content: "▹ ";
+      content: "✓ ";
       color: #667eea;
       font-weight: bold;
+      margin-right: 8px;
+    }
+    
+    .achievements-list {
+      list-style: none;
+      margin-left: 0;
+    }
+    
+    .achievements-list li {
+      padding: 15px;
+      margin-bottom: 15px;
+      background: #f7fafc;
+      border-radius: 8px;
+      border-left: 4px solid #764ba2;
+      color: #4a5568;
+    }
+    
+    .achievements-list li:before {
+      content: "🏆 ";
+      margin-right: 10px;
     }
     
     .contact-info {
       display: flex;
       flex-wrap: wrap;
-      gap: 20px;
+      gap: 25px;
       justify-content: center;
+      padding: 30px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 15px;
+      color: white;
     }
     
     .contact-item {
-      background: #f7fafc;
-      padding: 15px 25px;
-      border-radius: 10px;
-      text-align: center;
-      flex: 1;
-      min-width: 200px;
-    }
-    
-    .contact-item strong {
-      display: block;
-      color: #667eea;
-      margin-bottom: 5px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
     
     .contact-item a {
-      color: #2d3748;
+      color: white;
       text-decoration: none;
-      transition: color 0.3s ease;
+      font-weight: 500;
+      transition: opacity 0.3s;
     }
     
     .contact-item a:hover {
-      color: #667eea;
-    }
-    
-    footer {
-      background: #2d3748;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9rem;
+      opacity: 0.8;
     }
     
     @media (max-width: 768px) {
+      header {
+        padding: 40px 20px;
+      }
+      
       h1 {
-        font-size: 2rem;
+        font-size: 2em;
       }
       
-      .profile-photo {
-        width: 150px;
-        height: 150px;
-      }
-      
-      main {
+      .content {
         padding: 20px;
       }
       
-      .skills-grid {
-        grid-template-columns: 1fr;
+      .profile-image {
+        width: 150px;
+        height: 150px;
       }
     }
   </style>
@@ -241,159 +230,186 @@
 <body>
   <div class="container">
     <header>
-      <img src="1000278950.jpg" alt="Priyadip Sau" class="profile-photo">
+      <img src="1000278950.jpg" alt="Priyadip Sau" class="profile-image">
       <h1>Priyadip Sau</h1>
-      <p class="tagline">Machine Learning & Generative AI Specialist</p>
-      <div class="social-links">
-        <a href="https://github.com/priyadip" target="_blank">GitHub</a>
-        <a href="https://linkedin.com/in/priyadipsau" target="_blank">LinkedIn</a>
-        <a href="mailto:priyadip.sau@example.com">Email</a>
-      </div>
+      <p class="tagline">Machine Learning Engineer | GenAI Specialist | Data Scientist</p>
     </header>
     
-    <main>
+    <div class="content">
       <section id="bio">
-        <h2>About Me</h2>
-        <div class="card">
-          <p>Passionate Machine Learning and Generative AI specialist with expertise in developing intelligent systems and innovative AI solutions. Committed to leveraging cutting-edge technologies to solve complex problems and drive meaningful impact.</p>
-        </div>
+        <h2>Bio</h2>
+        <p class="bio-text">
+          Passionate Machine Learning Engineer and GenAI specialist with expertise in developing innovative AI solutions. 
+          Experienced in building scalable machine learning models, implementing generative AI applications, and leveraging 
+          cutting-edge technologies to solve complex business problems. Strong background in data science, deep learning, 
+          and MLOps with a proven track record of delivering impactful projects.
+        </p>
       </section>
       
       <section id="education">
         <h2>Education</h2>
-        <div class="card">
-          <h3>Master of Science in Computer Science</h3>
+        <div class="education-item">
+          <h3>Bachelor of Technology in Computer Science</h3>
           <p class="subtitle">University Name</p>
-          <p class="date">2020 - 2022</p>
-          <p>Specialized in Machine Learning, Deep Learning, and Artificial Intelligence</p>
-        </div>
-        <div class="card">
-          <h3>Bachelor of Technology in Computer Engineering</h3>
-          <p class="subtitle">Institute Name</p>
-          <p class="date">2016 - 2020</p>
-          <p>Foundation in Computer Science, Algorithms, and Software Development</p>
-        </div>
-      </section>
-      
-      <section id="skills">
-        <h2>Skills & Expertise</h2>
-        <div class="skills-grid">
-          <div class="skill-category">
-            <h3>Machine Learning</h3>
-            <ul>
-              <li>Deep Learning</li>
-              <li>Neural Networks</li>
-              <li>Computer Vision</li>
-              <li>NLP</li>
-              <li>Model Optimization</li>
-            </ul>
-          </div>
-          <div class="skill-category">
-            <h3>Generative AI</h3>
-            <ul>
-              <li>Large Language Models</li>
-              <li>GPT & Transformers</li>
-              <li>Prompt Engineering</li>
-              <li>RAG Systems</li>
-              <li>Fine-tuning</li>
-            </ul>
-          </div>
-          <div class="skill-category">
-            <h3>Programming</h3>
-            <ul>
-              <li>Python</li>
-              <li>TensorFlow & PyTorch</li>
-              <li>Scikit-learn</li>
-              <li>Pandas & NumPy</li>
-              <li>Git & Version Control</li>
-            </ul>
-          </div>
-          <div class="skill-category">
-            <h3>Tools & Platforms</h3>
-            <ul>
-              <li>AWS/GCP/Azure</li>
-              <li>Docker & Kubernetes</li>
-              <li>MLOps</li>
-              <li>Jupyter Notebooks</li>
-              <li>API Development</li>
-            </ul>
-          </div>
+          <p class="date">Year - Year</p>
+          <p>Specialized in Machine Learning, Artificial Intelligence, and Data Science</p>
         </div>
       </section>
       
       <section id="projects">
-        <h2>Featured Projects</h2>
-        <div class="card">
-          <h3>AI-Powered Chatbot System</h3>
-          <p class="subtitle">Generative AI | NLP</p>
-          <p>Developed an intelligent chatbot using large language models with context-aware responses, achieving 95% user satisfaction rate.</p>
+        <h2>Projects</h2>
+        <div class="project-item">
+          <h3>GenAI Application Development</h3>
+          <p class="date">Recent Project</p>
+          <ul>
+            <li>Developed generative AI applications using state-of-the-art language models</li>
+            <li>Implemented RAG (Retrieval Augmented Generation) systems for enhanced accuracy</li>
+            <li>Deployed scalable solutions using cloud infrastructure</li>
+          </ul>
         </div>
-        <div class="card">
-          <h3>Image Classification Platform</h3>
-          <p class="subtitle">Computer Vision | Deep Learning</p>
-          <p>Built a CNN-based image classifier with 98% accuracy for multi-class classification, deployed on cloud infrastructure.</p>
+        <div class="project-item">
+          <h3>Machine Learning Pipeline</h3>
+          <p class="date">Recent Project</p>
+          <ul>
+            <li>Built end-to-end ML pipelines for production deployment</li>
+            <li>Implemented automated model training and evaluation workflows</li>
+            <li>Integrated MLOps best practices for continuous improvement</li>
+          </ul>
         </div>
-        <div class="card">
-          <h3>Predictive Analytics Dashboard</h3>
-          <p class="subtitle">Machine Learning | Data Science</p>
-          <p>Created an ML-powered analytics platform for business intelligence, reducing forecasting errors by 40%.</p>
+        <div class="project-item">
+          <h3>Data Analytics Platform</h3>
+          <p class="date">Recent Project</p>
+          <ul>
+            <li>Designed and developed comprehensive data analytics solutions</li>
+            <li>Created interactive dashboards for business intelligence</li>
+            <li>Implemented real-time data processing pipelines</li>
+          </ul>
         </div>
       </section>
       
       <section id="experience">
-        <h2>Professional Experience</h2>
-        <div class="card">
+        <h2>Experience</h2>
+        <div class="experience-item">
           <h3>Machine Learning Engineer</h3>
-          <p class="subtitle">Tech Company</p>
-          <p class="date">2022 - Present</p>
-          <p>Developing and deploying ML models for production systems, leading GenAI initiatives, and optimizing model performance.</p>
+          <p class="subtitle">Company Name</p>
+          <p class="date">Duration</p>
+          <ul>
+            <li>Developed and deployed machine learning models for production environments</li>
+            <li>Collaborated with cross-functional teams to deliver AI-powered solutions</li>
+            <li>Optimized model performance and implemented monitoring systems</li>
+            <li>Mentored junior team members on ML best practices</li>
+          </ul>
         </div>
-        <div class="card">
-          <h3>AI Research Intern</h3>
-          <p class="subtitle">Research Lab</p>
-          <p class="date">2021 - 2022</p>
-          <p>Conducted research on novel deep learning architectures and contributed to published papers in AI conferences.</p>
+        <div class="experience-item">
+          <h3>Data Scientist</h3>
+          <p class="subtitle">Company Name</p>
+          <p class="date">Duration</p>
+          <ul>
+            <li>Conducted advanced data analysis and statistical modeling</li>
+            <li>Built predictive models to drive business decisions</li>
+            <li>Created data visualization and reporting solutions</li>
+            <li>Worked with stakeholders to identify and solve business problems</li>
+          </ul>
+        </div>
+      </section>
+      
+      <section id="skills">
+        <h2>Technical Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-category">
+            <h3>Programming Languages</h3>
+            <ul>
+              <li>Python</li>
+              <li>SQL</li>
+              <li>R</li>
+              <li>JavaScript</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h3>ML/AI Frameworks</h3>
+            <ul>
+              <li>TensorFlow</li>
+              <li>PyTorch</li>
+              <li>Scikit-learn</li>
+              <li>Keras</li>
+              <li>Hugging Face</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h3>GenAI & LLMs</h3>
+            <ul>
+              <li>OpenAI GPT</li>
+              <li>LangChain</li>
+              <li>RAG Systems</li>
+              <li>Prompt Engineering</li>
+              <li>Fine-tuning</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h3>Data Tools</h3>
+            <ul>
+              <li>Pandas</li>
+              <li>NumPy</li>
+              <li>Matplotlib</li>
+              <li>Seaborn</li>
+              <li>Plotly</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h3>Cloud & DevOps</h3>
+            <ul>
+              <li>AWS</li>
+              <li>Azure</li>
+              <li>Docker</li>
+              <li>Kubernetes</li>
+              <li>Git</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h3>Databases</h3>
+            <ul>
+              <li>PostgreSQL</li>
+              <li>MongoDB</li>
+              <li>Redis</li>
+              <li>Vector DBs</li>
+            </ul>
+          </div>
         </div>
       </section>
       
       <section id="achievements">
-        <h2>Achievements & Certifications</h2>
-        <div class="card">
-          <h3>🏆 AI Excellence Award</h3>
-          <p>Recognized for outstanding contributions to AI innovation and project delivery</p>
-        </div>
-        <div class="card">
-          <h3>📜 TensorFlow Developer Certificate</h3>
-          <p>Google Certified TensorFlow Developer</p>
-        </div>
-        <div class="card">
-          <h3>📜 AWS Machine Learning Specialty</h3>
-          <p>Amazon Web Services Certified ML Specialist</p>
-        </div>
+        <h2>Achievements</h2>
+        <ul class="achievements-list">
+          <li>Successfully deployed multiple machine learning models in production environments</li>
+          <li>Contributed to open-source AI/ML projects</li>
+          <li>Published research papers and technical articles on ML and GenAI</li>
+          <li>Recognized for innovative solutions in AI/ML domain</li>
+          <li>Completed advanced certifications in Machine Learning and Cloud Computing</li>
+        </ul>
       </section>
       
       <section id="contact">
-        <h2>Get In Touch</h2>
+        <h2>Contact</h2>
         <div class="contact-info">
           <div class="contact-item">
-            <strong>Email</strong>
-            <a href="mailto:priyadip.sau@example.com">priyadip.sau@example.com</a>
+            <span>📧</span>
+            <a href="mailto:priyadip@example.com">priyadip@example.com</a>
           </div>
           <div class="contact-item">
-            <strong>Location</strong>
-            <span>Available for Remote Work</span>
+            <span>💼</span>
+            <a href="https://linkedin.com/in/priyadipsau" target="_blank">LinkedIn</a>
           </div>
           <div class="contact-item">
-            <strong>GitHub</strong>
-            <a href="https://github.com/priyadip" target="_blank">@priyadip</a>
+            <span>🐙</span>
+            <a href="https://github.com/priyadip" target="_blank">GitHub</a>
+          </div>
+          <div class="contact-item">
+            <span>📱</span>
+            <span>+91-XXXXXXXXXX</span>
           </div>
         </div>
       </section>
-    </main>
-    
-    <footer>
-      <p>&copy; 2025 Priyadip Sau. All rights reserved. Built with passion for AI and innovation.</p>
-    </footer>
+    </div>
   </div>
 </body>
 </html>
