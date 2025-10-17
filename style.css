@@ -264,4 +264,50 @@ footer {
     .toggle .line3 {
         transform: rotate(45deg) translate(-5px, -6px);
     }
+
+}
+/* Styles for Hero Section with Image */
+.hero-container {
+    display: flex;
+    align-items: center;
+    gap: 2rem; /* Adds space between text and image */
+}
+
+.hero-content {
+    flex: 2; /* Gives more space to the text */
+    text-align: left; /* Overrides the center alignment */
+}
+
+.hero-image {
+    flex: 1;
+    text-align: center;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 250px; /* Adjust size if needed */
+    border-radius: 50%; /* This makes the image a circle */
+    border: 5px solid #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Adjust the hero section's original text alignment */
+#hero {
+    text-align: left;
+}
+
+/* Make it stack on mobile devices */
+@media screen and (max-width: 768px) {
+    .hero-container {
+        flex-direction: column-reverse; /* Stacks text below image */
+        text-align: center;
+    }
+
+    .hero-content {
+        text-align: center;
+    }
+
+    .hero-image {
+        margin-bottom: 2rem;
+    }
 }
