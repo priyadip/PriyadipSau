@@ -27,15 +27,22 @@ navSlide();
 
 // --- Deployed Code Below ---
 
-// Logic for the theme toggle button
+// Place this in script.js, after your nav and Typed.js code
+
 const themeToggle = document.getElementById('theme-toggle');
-themeToggle.addEventListener('click', () => {
+
+if (themeToggle) {
+  themeToggle.addEventListener('click', () => {
+    // Toggle dark mode on body
     document.body.classList.toggle('dark-mode');
-    
-    // Optional: Change icon based on theme
+
+    // Change icon based on theme
     const isDarkMode = document.body.classList.contains('dark-mode');
     themeToggle.textContent = isDarkMode ? '☀️' : '🌙';
-});
+  });
+} else {
+  console.warn('Theme toggle button not found!');
+}
 
 // Logic for the Typed.js dynamic subtitle
 document.addEventListener('DOMContentLoaded', function() {
@@ -49,3 +56,4 @@ document.addEventListener('DOMContentLoaded', function() {
 
     var typed = new Typed('#typed-subtitle', options);
 });
+
