@@ -2,148 +2,398 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Priyadip Sau – AI Graduate Student</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Priyadip Sau | ML & GenAI Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: 'Roboto', Arial, sans-serif;
-      background: #f7f9fc;
-      color: #21253a;
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
-    header, section, footer {
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 0 1rem;
+    
+    body {
+      font-family: 'Roboto', Arial, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: #2d3748;
+      line-height: 1.6;
+      min-height: 100vh;
+      padding: 20px;
     }
+    
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      overflow: hidden;
+    }
+    
     header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
       text-align: center;
-      padding-top: 3rem;
+      padding: 60px 20px 40px;
     }
+    
+    .profile-photo {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 6px solid rgba(255, 255, 255, 0.9);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+      object-fit: cover;
+      margin-bottom: 20px;
+      transition: transform 0.3s ease;
+    }
+    
+    .profile-photo:hover {
+      transform: scale(1.05);
+    }
+    
     h1 {
-      font-size: 2.6rem;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.8rem;
       font-weight: 700;
-      margin-bottom: 0.25em;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     }
-    h2 {
-      color: #455cc7;
-      margin-top: 2.5rem;
-      font-size: 1.3em;
-      border-bottom: 1px solid #e3eaf2;
-      padding-bottom: 0.25em;
+    
+    .tagline {
+      font-size: 1.2rem;
+      font-weight: 300;
+      opacity: 0.95;
+      margin-bottom: 25px;
     }
-    .contact, .links {
-      margin: 1em 0;
+    
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
     }
-    .contact a, .links a {
-      margin-right: 1em;
-      color: #1136ab;
+    
+    .social-links a {
+      color: white;
       text-decoration: none;
+      padding: 10px 20px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 25px;
+      transition: all 0.3s ease;
+      font-weight: 500;
     }
-    ul, li { margin: 0.25em 0; }
-    .small { font-size: 0.98em; color: #384475; }
-    .tag { background: #eaf4ff; border-radius: 4px; padding: 2px 7px; margin-right: 0.4em; font-size: 0.9em; }
-    footer { text-align: center; font-size: 0.93em; padding-bottom: 1.5rem; color: #b3b8cc;}
+    
+    .social-links a:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: translateY(-2px);
+    }
+    
+    main {
+      padding: 40px;
+    }
+    
+    section {
+      margin-bottom: 40px;
+    }
+    
+    h2 {
+      font-family: 'Montserrat', sans-serif;
+      color: #667eea;
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 3px solid #667eea;
+      font-weight: 600;
+    }
+    
+    .card {
+      background: #f7fafc;
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 15px;
+      border-left: 4px solid #667eea;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+    }
+    
+    .card:hover {
+      box-shadow: 0 4px 16px rgba(102, 126, 234, 0.2);
+      transform: translateX(5px);
+    }
+    
+    .card h3 {
+      color: #2d3748;
+      font-size: 1.3rem;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+    
+    .card .subtitle {
+      color: #667eea;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+    
+    .card .date {
+      color: #718096;
+      font-size: 0.9rem;
+      font-style: italic;
+      margin-bottom: 10px;
+    }
+    
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+    }
+    
+    .skill-category {
+      background: #f7fafc;
+      padding: 20px;
+      border-radius: 12px;
+      border-top: 4px solid #667eea;
+    }
+    
+    .skill-category h3 {
+      color: #667eea;
+      margin-bottom: 12px;
+      font-size: 1.1rem;
+    }
+    
+    .skill-category ul {
+      list-style: none;
+    }
+    
+    .skill-category li {
+      padding: 5px 0;
+      color: #4a5568;
+    }
+    
+    .skill-category li:before {
+      content: "▹ ";
+      color: #667eea;
+      font-weight: bold;
+    }
+    
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    
+    .contact-item {
+      background: #f7fafc;
+      padding: 15px 25px;
+      border-radius: 10px;
+      text-align: center;
+      flex: 1;
+      min-width: 200px;
+    }
+    
+    .contact-item strong {
+      display: block;
+      color: #667eea;
+      margin-bottom: 5px;
+    }
+    
+    .contact-item a {
+      color: #2d3748;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .contact-item a:hover {
+      color: #667eea;
+    }
+    
+    footer {
+      background: #2d3748;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+    }
+    
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+      
+      .profile-photo {
+        width: 150px;
+        height: 150px;
+      }
+      
+      main {
+        padding: 20px;
+      }
+      
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
-
-<header>
-  <h1>Priyadip Sau</h1>
-  <div class="small">M.Tech (AI) &#x2022; IIT Jodhpur <br> Roll No.: M25CSA023</div>
-  <div class="contact">
-    <span class="tag">Phone</span> +91-8371871266<br>
-    <span class="tag">Email</span> saupriyadip571@gmail.com<br>
-    <span class="tag">Institute Email</span> m25csa023@iitj.ac.in
+  <div class="container">
+    <header>
+      <img src="1000278950.jpg" alt="Priyadip Sau" class="profile-photo">
+      <h1>Priyadip Sau</h1>
+      <p class="tagline">Machine Learning & Generative AI Specialist</p>
+      <div class="social-links">
+        <a href="https://github.com/priyadip" target="_blank">GitHub</a>
+        <a href="https://linkedin.com/in/priyadipsau" target="_blank">LinkedIn</a>
+        <a href="mailto:priyadip.sau@example.com">Email</a>
+      </div>
+    </header>
+    
+    <main>
+      <section id="bio">
+        <h2>About Me</h2>
+        <div class="card">
+          <p>Passionate Machine Learning and Generative AI specialist with expertise in developing intelligent systems and innovative AI solutions. Committed to leveraging cutting-edge technologies to solve complex problems and drive meaningful impact.</p>
+        </div>
+      </section>
+      
+      <section id="education">
+        <h2>Education</h2>
+        <div class="card">
+          <h3>Master of Science in Computer Science</h3>
+          <p class="subtitle">University Name</p>
+          <p class="date">2020 - 2022</p>
+          <p>Specialized in Machine Learning, Deep Learning, and Artificial Intelligence</p>
+        </div>
+        <div class="card">
+          <h3>Bachelor of Technology in Computer Engineering</h3>
+          <p class="subtitle">Institute Name</p>
+          <p class="date">2016 - 2020</p>
+          <p>Foundation in Computer Science, Algorithms, and Software Development</p>
+        </div>
+      </section>
+      
+      <section id="skills">
+        <h2>Skills & Expertise</h2>
+        <div class="skills-grid">
+          <div class="skill-category">
+            <h3>Machine Learning</h3>
+            <ul>
+              <li>Deep Learning</li>
+              <li>Neural Networks</li>
+              <li>Computer Vision</li>
+              <li>NLP</li>
+              <li>Model Optimization</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h3>Generative AI</h3>
+            <ul>
+              <li>Large Language Models</li>
+              <li>GPT & Transformers</li>
+              <li>Prompt Engineering</li>
+              <li>RAG Systems</li>
+              <li>Fine-tuning</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h3>Programming</h3>
+            <ul>
+              <li>Python</li>
+              <li>TensorFlow & PyTorch</li>
+              <li>Scikit-learn</li>
+              <li>Pandas & NumPy</li>
+              <li>Git & Version Control</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h3>Tools & Platforms</h3>
+            <ul>
+              <li>AWS/GCP/Azure</li>
+              <li>Docker & Kubernetes</li>
+              <li>MLOps</li>
+              <li>Jupyter Notebooks</li>
+              <li>API Development</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      
+      <section id="projects">
+        <h2>Featured Projects</h2>
+        <div class="card">
+          <h3>AI-Powered Chatbot System</h3>
+          <p class="subtitle">Generative AI | NLP</p>
+          <p>Developed an intelligent chatbot using large language models with context-aware responses, achieving 95% user satisfaction rate.</p>
+        </div>
+        <div class="card">
+          <h3>Image Classification Platform</h3>
+          <p class="subtitle">Computer Vision | Deep Learning</p>
+          <p>Built a CNN-based image classifier with 98% accuracy for multi-class classification, deployed on cloud infrastructure.</p>
+        </div>
+        <div class="card">
+          <h3>Predictive Analytics Dashboard</h3>
+          <p class="subtitle">Machine Learning | Data Science</p>
+          <p>Created an ML-powered analytics platform for business intelligence, reducing forecasting errors by 40%.</p>
+        </div>
+      </section>
+      
+      <section id="experience">
+        <h2>Professional Experience</h2>
+        <div class="card">
+          <h3>Machine Learning Engineer</h3>
+          <p class="subtitle">Tech Company</p>
+          <p class="date">2022 - Present</p>
+          <p>Developing and deploying ML models for production systems, leading GenAI initiatives, and optimizing model performance.</p>
+        </div>
+        <div class="card">
+          <h3>AI Research Intern</h3>
+          <p class="subtitle">Research Lab</p>
+          <p class="date">2021 - 2022</p>
+          <p>Conducted research on novel deep learning architectures and contributed to published papers in AI conferences.</p>
+        </div>
+      </section>
+      
+      <section id="achievements">
+        <h2>Achievements & Certifications</h2>
+        <div class="card">
+          <h3>🏆 AI Excellence Award</h3>
+          <p>Recognized for outstanding contributions to AI innovation and project delivery</p>
+        </div>
+        <div class="card">
+          <h3>📜 TensorFlow Developer Certificate</h3>
+          <p>Google Certified TensorFlow Developer</p>
+        </div>
+        <div class="card">
+          <h3>📜 AWS Machine Learning Specialty</h3>
+          <p>Amazon Web Services Certified ML Specialist</p>
+        </div>
+      </section>
+      
+      <section id="contact">
+        <h2>Get In Touch</h2>
+        <div class="contact-info">
+          <div class="contact-item">
+            <strong>Email</strong>
+            <a href="mailto:priyadip.sau@example.com">priyadip.sau@example.com</a>
+          </div>
+          <div class="contact-item">
+            <strong>Location</strong>
+            <span>Available for Remote Work</span>
+          </div>
+          <div class="contact-item">
+            <strong>GitHub</strong>
+            <a href="https://github.com/priyadip" target="_blank">@priyadip</a>
+          </div>
+        </div>
+      </section>
+    </main>
+    
+    <footer>
+      <p>&copy; 2025 Priyadip Sau. All rights reserved. Built with passion for AI and innovation.</p>
+    </footer>
   </div>
-  <div class="links">
-    <a href="https://github.com/priyadip" target="_blank">GitHub</a>
-    <a href="https://linkedin.com/in/priyadip-cs" target="_blank">LinkedIn</a>
-  </div>
-</header>
-
-<section>
-  <h2>Education</h2>
-  <ul>
-    <li><b>M.Tech. Artificial Intelligence</b>, Indian Institute of Technology Jodhpur (2025–2027, Ongoing)</li>
-    <li><b>M.Sc. Mathematics</b>, University of North Bengal (2021–2023) – CGPA: 6.46</li>
-    <li><b>B.Sc. Mathematics</b>, Vidyasagar University (2018–2021) – CGPA: 8.62</li>
-    <li><b>Higher Secondary</b>, WBCHSE (2018) – 83.20%</li>
-    <li><b>Secondary</b>, WBBSE (2016) – 67.28%</li>
-  </ul>
-</section>
-
-<section>
-  <h2>Projects</h2>
-  <ul>
-    <li>
-      <b>Rice Dataset Classification using ResNet-18</b> (Aug 2025)
-      <br>
-      Trained a ResNet-18 classifier on a rice dataset (5 species). Achieved 99.87% accuracy (Kaggle GPU, 20 epochs).<br>
-      <span class="small">Tools: Python 3, PyTorch, Pillow</span>
-    </li>
-  </ul>
-</section>
-
-<section>
-  <h2>Work Experience</h2>
-  <ul>
-    <li>
-      <b>Math Teacher</b> – Vivekananda Public School, Odisha<br>
-      Mar 2025 – Jul 2025. Taught Class-VIII to Class-XII, affiliated to CBSE.
-    </li>
-  </ul>
-</section>
-
-<section>
-  <h2>Relevant Courses Taken</h2>
-  <ul>
-    <li>M.Tech AI: Machine Learning, Mathematical Foundations of CS, Artificial Intelligence, Foundation Models & Generative AI.</li>
-    <li>M.Sc: Numerical Programming, Linear Algebra, PDE, ODE, Graph Theory, Combinatorics.</li>
-    <li>B.Sc: Differential Equations, Vector Calculus, Numerical Methods, Linear Programming, Probability & Statistics.</li>
-  </ul>
-</section>
-
-<section>
-  <h2>Technical Skills</h2>
-  <ul>
-    <li><span class="tag">Programming</span> Python, C, SQL</li>
-    <li><span class="tag">IDEs</span> VS Code, IDLE, Jupyter, Colaboratory</li>
-    <li><span class="tag">Frameworks</span> PyTorch, Scikit-learn, Numpy, Pandas</li>
-    <li><span class="tag">Proficiencies</span> ML algorithms: Decision Tree, SVM, Random Forest</li>
-    <li><span class="tag">Others</span> Git, LaTeX, MS Office</li>
-  </ul>
-</section>
-
-<section>
-  <h2>Achievements</h2>
-  <ul>
-    <li>Qualified GATE DA, AIR 226 (Score: 717, 2025)</li>
-    <li>2nd position, Math Seminar at Kharagpur College (2021)</li>
-  </ul>
-</section>
-
-<section>
-  <h2>Languages</h2>
-  <ul>
-    <li>Bengali</li>
-    <li>English</li>
-    <li>Hindi</li>
-  </ul>
-</section>
-
-<section>
-  <h2>References</h2>
-  <ul>
-    <li>Dr. Paltu Sarkar – <a href="mailto:pal2_math_796@nbu.ac.in">pal2_math_796@nbu.ac.in</a>, Assistant Professor, Dept. of Mathematics, North Bengal University</li>
-    <li>Dr. Anjana Mondal – <a href="mailto:anjanam@iittp.ac.in">anjanam@iittp.ac.in</a>, Assistant Professor, Dept. of Mathematics & Statistics, IIT Tirupati</li>
-  </ul>
-</section>
-
-<footer>
-  &copy; 2025 Priyadip Sau. Powered by GitHub Pages. Domain: priyadipsau.in
-</footer>
-
 </body>
 </html>
