@@ -333,6 +333,7 @@ body.dark-mode footer {
 }
 
 /* Styles for Hero Section with Image */
+/* Styles for Hero Section with Image */
 .hero-container {
     display: flex;
     align-items: center;
@@ -344,17 +345,79 @@ body.dark-mode footer {
     text-align: left;
 }
 
+/* NEW: Wrapper for the profile image to create the square background and depth */
+.profile-image-wrapper {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--card-bg);
+    box-shadow: 
+        5px 5px 10px rgba(0,0,0,0.1),
+        -5px -5px 10px rgba(255,255,255,0.05);
+    transition: background 0.3s, box-shadow 0.3s, border-color 0.3s;
+    border: 1px solid var(--border-color);
+    z-index: 1;
+}
+
+/* Pseudo-elements for the depth effect (inner shadow/highlight) */
+.profile-image-wrapper::before,
+.profile-image-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    box-sizing: border-box;
+}
+
+.profile-image-wrapper::before {
+    box-shadow: inset 2px 2px 5px rgba(0,0,0,0.2), inset -2px -2px 5px rgba(255,255,255,0.1);
+    z-index: 2;
+}
+
+.profile-image-wrapper::after {
+    box-shadow: inset 0 0 0 2px var(--primary-color);
+    opacity: 0.1;
+    z-index: 3;
+}
+
 .hero-image {
     flex: 1;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .hero-image img {
-    width: 100%;
-    max-width: 250px;
+    width: 80%;
+    max-width: 180px;
+    height: auto;
     border-radius: 50%;
-    border: 5px solid var(--card-bg);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    object-fit: cover;
+}
+
+/* Adjustments for dark mode for the depth effect */
+body.dark-mode .profile-image-wrapper {
+    box-shadow: 
+        5px 5px 10px rgba(0,0,0,0.4),
+        -5px -5px 10px rgba(20,20,20,0.1);
+}
+
+body.dark-mode .profile-image-wrapper::before {
+    box-shadow: inset 2px 2px 5px rgba(0,0,0,0.5), inset -2px -2px 5px rgba(50,50,50,0.1);
+}
+
+body.dark-mode .profile-image-wrapper::after {
+    box-shadow: inset 0 0 0 2px var(--primary-color);
+    opacity: 0.2;
 }
 
 /* Mobile Responsive Hero Section */
@@ -370,5 +433,12 @@ body.dark-mode footer {
 
     .hero-image {
         margin-bottom: 2rem;
+    }
+    .profile-image-wrapper {
+        width: 200px;
+        height: 200px;
+    }
+    .hero-image img {
+        max-width: 150px;
     }
 }
