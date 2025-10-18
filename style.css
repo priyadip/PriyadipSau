@@ -349,8 +349,8 @@ body.dark-mode footer {
 .profile-image-wrapper {
     position: relative;
     width: 250px;
-    height: 250px;
-    border-radius: 15px;
+    height: 300px;
+    border-radius: 10px;
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -405,7 +405,7 @@ body.dark-mode footer {
 .hero-image img {
     width: 100%; /* Image fills the card width */
     max-width: 250px; /* Limit max size for image within the card */
-    height: 300; /* Maintain aspect ratio */
+    height: 300px; /* Maintain aspect ratio */
     border-radius: 10px; /* Slightly less rounded than the card itself */
     object-fit: cover; /* Ensures image covers the area, cropping if necessary */
     display: block; /* Removes extra space below image */
@@ -430,4 +430,5 @@ body.dark-mode footer {
         padding: 15px; /* Adjust padding for mobile */
     }
 }
+
 
