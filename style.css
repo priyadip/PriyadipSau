@@ -405,7 +405,7 @@ body.dark-mode footer {
 .hero-image img {
     width: 100%; /* Image fills the card width */
     max-width: 250px; /* Limit max size for image within the card */
-    height: auto; /* Maintain aspect ratio */
+    height: 300; /* Maintain aspect ratio */
     border-radius: 10px; /* Slightly less rounded than the card itself */
     object-fit: cover; /* Ensures image covers the area, cropping if necessary */
     display: block; /* Removes extra space below image */
@@ -430,3 +430,4 @@ body.dark-mode footer {
         padding: 15px; /* Adjust padding for mobile */
     }
 }
+
