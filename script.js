@@ -85,20 +85,27 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     navSlide();
 
-    const typedElement = document.getElementById('typed-subtitle');
-    if (typedElement) {
-        const options = {
-            strings: ['MTech AI @IIT Jodhpur 27', 'AI/ML Researcher', 'Generative AI enthusiast', 'GATE DA 25 AIR-226'],
-            typeSpeed: 50,
-            backSpeed: 25,
-            backDelay: 1500,
-            loop: true
-        };
-        new Typed('#typed-subtitle', options);
-    }
+  const typedElement = document.getElementById('typed-subtitle');
+  if (typedElement) {
+    const options = {
+      strings: [
+        '<span style="color:#00ffff">MTech AI @IIT Jodhpur 27</span>',
+        '<span style="color:#ff66cc">AI/ML Researcher</span>',
+        '<span style="color:#ffcc00">Generative AI enthusiast</span>',
+        '<span style="color:#99ff99">GATE DA 25 AIR-226</span>'
+      ],
+      typeSpeed: 60,
+      backSpeed: 30,
+      backDelay: 1500,
+      loop: true,
+      contentType: 'html' // important to render HTML inside strings
+    };
+    new Typed('#typed-subtitle', options);
+  }
     
     AOS.init({
         duration: 700,
         once: true,
     });
 });
+
