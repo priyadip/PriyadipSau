@@ -427,34 +427,32 @@ section h2 {
 
 /* --- Right Column: Contact Form --- */
 .contact-form form {
+    /* This ensures the form itself uses all available space */
+    width: 100%; 
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
 }
 
 .form-row {
-    display: flex;
-    gap: 1.5rem;
+    display: flex; /* Aligns items (First/Last Name) in a row */
+    gap: 1.5rem;   /* Creates space between them */
 }
 
 .form-group {
-    flex: 1; /* Each group takes equal space in a row */
+    flex: 1; /* CRITICAL: This tells First Name & Last Name to share space equally */
     display: flex;
     flex-direction: column;
 }
 
-.form-group label {
-    color: var(--text-color);
-    margin-bottom: 0.5rem;
-    font-size: 0.9rem;
-}
-
 .contact-form input,
 .contact-form textarea {
-    width: 100%;
+    /* Ensures inputs don't overflow their containers */
+    width: 100%; 
+    box-sizing: border-box; /* Prevents padding/border from breaking the layout */
     padding: 0.75rem 1rem;
     border: 1px solid var(--border-color);
-    background-color: transparent; /* Blends with the background */
+    background-color: var(--card-bg);
     color: var(--text-color);
     border-radius: 8px;
     font-family: 'Lato', sans-serif;
@@ -652,6 +650,7 @@ body.dark-mode footer {
         padding: 15px; /* Adjust padding for mobile */
     }
 }
+
 
 
 
