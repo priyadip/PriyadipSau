@@ -655,6 +655,35 @@ footer {
         padding: 15px; /* Adjust padding for mobile */
     }
 }
+/* === Typed.js Subtitle Styling === */
+#typed-subtitle {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--text-color);
+    opacity: 0.9;
+    min-height: 28px; /* ensures consistent height for changing text */
+    text-shadow: 0 0 8px rgba(0, 123, 255, 0.2); /* subtle glow in light mode */
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* Cursor styling (the blinking | symbol) */
+.typed-cursor {
+    color: var(--primary-color);
+    font-weight: bold;
+    text-shadow: 0 0 10px var(--primary-color);
+}
+
+/* Enhance appearance in dark mode */
+body.dark-mode #typed-subtitle {
+    text-shadow: 0 0 10px rgba(0, 166, 255, 0.4); /* soft neon blue */
+}
+
+body.dark-mode .typed-cursor {
+    color: var(--primary-color);
+    text-shadow: 0 0 15px var(--primary-color);
+}
+
+
 
 
 
