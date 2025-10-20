@@ -89,10 +89,10 @@ document.addEventListener('DOMContentLoaded', () => {
   if (typedElement) {
     const options = {
       strings: [
-        '<span style="color:#01010d">MTech AI @IIT Jodhpur 27</span>',
-        '<span style="color:#030629">AI/ML Researcher</span>',
-        '<span style="color:#080d4f">Generative AI enthusiast</span>',
-        '<span style="color:#080d4f">GATE DA 25 AIR-226</span>'
+        '<span style="typed-color1">MTech AI @IIT Jodhpur 27</span>',
+        '<span style="typed-color2">AI/ML Researcher</span>',
+        '<span style="typed-color3">Generative AI enthusiast</span>',
+        '<span style="typed-color4">GATE DA 25 AIR-226</span>'
       ],
       typeSpeed: 60,
       backSpeed: 30,
@@ -108,5 +108,6 @@ document.addEventListener('DOMContentLoaded', () => {
         once: true,
     });
 });
+
 
 
