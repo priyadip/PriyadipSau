@@ -1,3 +1,59 @@
+/* ---- particles.js config ---- */
+particlesJS("particles-js", {
+  "particles": {
+    "number": {
+      "value": 60, /* Number of particles */
+      "density": {
+        "enable": true,
+        "value_area": 800
+      }
+    },
+    "color": {
+      "value": "#ffffff" /* Particle color */
+    },
+    "shape": {
+      "type": "circle"
+    },
+    "opacity": {
+      "value": 0.5,
+      "random": false
+    },
+    "size": {
+      "value": 2,
+      "random": true
+    },
+    "line_linked": {
+      "enable": true,
+      "distance": 150,
+      "color": "#ffffff", /* Line color */
+      "opacity": 0.3,
+      "width": 1
+    },
+    "move": {
+      "enable": true,
+      "speed": 1, /* Slow movement speed */
+      "direction": "none",
+      "out_mode": "out"
+    }
+  },
+  "interactivity": {
+    "detect_on": "canvas",
+    "events": {
+      "onhover": {
+        "enable": true,
+        "mode": "repulse" /* Particles move away from cursor */
+      },
+      "onclick": {
+        "enable": true,
+        "mode": "push"
+      },
+      "resize": true
+    }
+  },
+  "retina_detect": true
+});
+
+
 document.addEventListener('DOMContentLoaded', () => {
 
     // Function for the mobile navigation (hamburger menu)
@@ -53,4 +109,5 @@ document.addEventListener('DOMContentLoaded', () => {
         once: true,
     });
 });
+
 
