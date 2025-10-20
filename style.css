@@ -158,6 +158,138 @@ section h2 {
     font-size: 2.5rem;
 }
 
+
+/* General Styling for the Section */
+#education {
+  padding-top: 4rem;
+}
+
+.education-details-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.education-entry {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem; /* Creates space between header, coursework title, and tags */
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+}
+
+.education-entry:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.education-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.icon-container {
+  font-size: 2.25rem;
+}
+
+.education-header h3 {
+  font-size: 1.35rem;
+  margin: 0;
+}
+
+.degree-info {
+  margin: 0.2rem 0 0 0;
+  font-size: 1rem;
+}
+
+.details-card h4 {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+}
+
+.course-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.course-tags span {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* ------------------------- */
+/* --- DARK MODE STYLES --- */
+/* ------------------------- */
+
+.details-card {
+  background-color: #1a1a2e;
+  border: 1px solid rgb(85, 85, 85);
+  border-radius: 2rem;
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 800px;
+}
+
+.education-entry {
+  border-bottom: 1px solid #333;
+}
+
+.education-header h3, .title {
+  color: #ffffff;
+}
+
+.degree-info, .details-card h4 {
+  color: #a0a0a0;
+}
+
+.icon-container {
+  color: #88a4e3; /* Accent blue */
+}
+
+.course-tags span {
+  background-color: #2c2c44;
+  color: #d1d1d1;
+  border: 1px solid #444;
+}
+
+/* ------------------------- */
+/* --- LIGHT MODE STYLES --- */
+/* ------------------------- */
+
+.light-theme .details-card {
+  background-color: #f4f4f4; /* Light gray background */
+  border-color: #dcdcdc;
+}
+
+.light-theme .education-entry {
+  border-bottom: 1px solid #dcdcdc;
+}
+
+.light-theme .education-header h3, .light-theme .title {
+  color: #2d3748; /* Dark text */
+}
+
+.light-theme .degree-info, .light-theme .details-card h4 {
+  color: #555555; /* Slightly lighter dark text */
+}
+
+.light-theme .icon-container {
+  color: #4a6ac4; /* A slightly darker blue for contrast on light background */
+}
+
+.light-theme .course-tags span {
+  background-color: #e2e8f0;
+  color: #2d3748;
+  border: 1px solid #cbd5e0;
+}
+
+
+
 /* Skills Section */
 .skills-grid {
     display: grid;
@@ -430,6 +562,7 @@ body.dark-mode footer {
         padding: 15px; /* Adjust padding for mobile */
     }
 }
+
 
 
 
