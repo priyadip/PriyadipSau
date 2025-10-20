@@ -103,6 +103,15 @@ header nav ul li a:hover {
     margin: 5px;
     transition: all 0.3s ease;
 }
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1; /* CRITICAL: This places it behind all other content */
+    background-color: var(--bg-color); /* Fallback background */
+}
 
 /* Hero Section */
 #hero {
@@ -650,6 +659,7 @@ body.dark-mode footer {
         padding: 15px; /* Adjust padding for mobile */
     }
 }
+
 
 
 
