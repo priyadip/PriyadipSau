@@ -6,6 +6,10 @@
     --primary-color: #007BFF;
     --border-color: #e0e0e0;
     --header-bg: rgba(255, 255, 255, 0.85); /* Slightly transparent header */
+    --typed-color1: #01010d; /* light-mode */
+  --typed-color2: #030629;
+  --typed-color3: #080d4f;
+  --typed-color4: #080d4f;
 }
 
 /* This is the dark mode theme */
@@ -16,8 +20,15 @@ body.dark-mode {
     --primary-color: #00A6FF; /* A brighter blue for dark backgrounds */
     --border-color: #333;
     --header-bg: rgba(30, 30, 30, 0.85);
+    --typed-color1: #00ffff; /* dark-mode colors */
+  --typed-color2: #00ff99;
+  --typed-color3: #00ccff;
+  --typed-color4: #99ccff;
 }
-
+.typed-color1 { color: var(--typed-color1); }
+.typed-color2 { color: var(--typed-color2); }
+.typed-color3 { color: var(--typed-color3); }
+.typed-color4 { color: var(--typed-color4); }
 /* General Body Styles */
 body {
     /* Font updated to Lato */
@@ -681,5 +692,6 @@ footer {
     color: var(--bg-color);
     box-shadow: 0 0 10px var(--primary-color);
 }
+
 
 
