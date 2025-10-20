@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Logic for the Typed.js dynamic subtitle
     var options = {
-        strings: ['M.Tech AI Student', 'Machine Learning Enthusiast', 'Deep Learning Developer'],
+        strings: ['MTech AI @IIT Jodhpur 27', 'AI/ML Researcher', 'Generative AI enthusiast','GATE DA 25 AIR-226'],
         typeSpeed: 50,
         backSpeed: 25,
         backDelay: 1500,
@@ -53,3 +53,4 @@ document.addEventListener('DOMContentLoaded', () => {
         once: true,
     });
 });
+
