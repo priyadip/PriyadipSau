@@ -498,13 +498,9 @@ section h2 {
 footer {
     text-align: center;
     padding: 2rem 0;
-    background: #333;
-    color: #fff;
-}
-
-body.dark-mode footer {
-    background: #1e1e1e;
-    color: var(--text-color);
+    background: var(--card-bg); /* Use a theme variable */
+    color: var(--text-color);    /* Use a theme variable */
+    border-top: 1px solid var(--border-color); /* Adds nice separation */
 }
 
 /* Responsive Design */
@@ -659,6 +655,7 @@ body.dark-mode footer {
         padding: 15px; /* Adjust padding for mobile */
     }
 }
+
 
 
 
